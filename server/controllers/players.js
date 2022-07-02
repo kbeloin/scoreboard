@@ -27,7 +27,6 @@ module.exports = (client, sendResponse) => {
   });
 
   client.on("ChangeScore", ({ id, delta }) => {
-    console.log(id, delta);
     players.find((player) => player.id === id).score += delta;
     sendResponse("getPlayers", players, client);
   });
